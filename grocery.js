@@ -5,6 +5,8 @@
  */
 
 $(document).ready(function(){
+  
+  var list = new List();
   $('.item').click(function(event){
     var $target = $(event.target);
     var itemInfo = list.parse(this);
@@ -12,10 +14,6 @@ $(document).ready(function(){
     list.appendList(tr);
     list.updateTotalPrice(itemInfo.price);
   });
-
-//DRIVER CODE
-list = new List();
-
 });
 
 
