@@ -11,22 +11,22 @@ var Item = function(){
 
 var List = function(){
 
-}
+};
 
 List.prototype.parse = function(tr){
-  var name = $(tr).find('.item_name').text()
-  var price = $(tr).find('.item_price').text()
-  var info = {name: name, price: price}
-  return info
-}
+  var name = $(tr).find('.item_name').text();
+  var price = $(tr).find('.item_price').text();
+  var info = {name: name, price: price};
+  return info;
+};
 
 List.prototype.injectRow = function(info){
-  return '<tr class="item"><td class="item_name">' + info.name + '</td><td class="item_price">' + info.price + '</td></tr>'
-}
+  return '<tr class="item"><td class="item_name">' + info.name + '</td><td class="item_price">' + info.price + '</td></tr>';
+};
 
 List.prototype.appendList = function(tr){
-  $('#grocery_list_body').append(tr)
-}
+  $('#grocery_list_body').append(tr);
+};
 
 
 $(document).ready(function(){
@@ -34,13 +34,13 @@ $(document).ready(function(){
     var $target = $(event.target);
     var itemInfo = list.parse(this);
     var tr = list.injectRow(itemInfo);
-    list.appendList(tr)
+    list.appendList(tr);
   });
 
 //DRIVER CODE
 list = new List();
 
-})
+});
 
 
 
